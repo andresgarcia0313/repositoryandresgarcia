@@ -1,0 +1,110 @@
+interface pagina
+	crearboton(tabulacion,rotulo,url)
+interface general
+	leer(nombredetabla,id,null)
+
+
+
+clase entidades implements{
+	leer(nombredetabla){
+		sql="select * from nombredetabla";
+		
+	}
+	procesarobjetosql($objetosql){
+		return arrayphp
+	}
+}
+clase pagina extends general{
+
+}
+clase capitulo extends capitulo{
+}
+clase pagina implements
+	crearbotón(){
+}
+
+
+
+//Read: acceder,buscar,consultar,consultarporid,listar
+    //Guardar Create y Update:Guardar, Eliminado Lógico,
+    //Delete:eliminar
+
+
+/*
+class modelousuario extends datos {
+    public $usuario;
+    public function consultar($id = 0) {
+        if ($id == 0) {
+            return parent::resultadoconsulta("
+				SELECT
+					usuario as 'Usuario',
+					clave	as 'Clave',
+					rol		as 'Rol'
+				FROM
+					usuario;
+			");
+        } else {
+            return parent::resultadoconsulta("
+				SELECT * 
+					FROM usuario
+					WHERE idusuario=$id
+			");
+        }
+    }
+
+    public function acceder($usuario) {
+
+        $resultado = parent::ejecutarsql("SELECT * FROM usuario WHERE usuario='{$usuario['usuario']}' AND clave=MD5('{$usuario['clave']}')");
+        $this->usuario = $resultado->fetch_array(MYSQLI_ASSOC);
+        $this->usuario ['existe'] = $resultado->num_rows;
+        return $this->usuario;
+    }
+
+    public function consultarporid($idusuario) {
+        $resultado = parent::ejecutarsql("SELECT * FROM usuario where idusuario=$idusuario");
+        $this->usuario = $resultado->fetch_array(MYSQLI_ASSOC);
+        return $this->usuario;
+    }
+
+    public function eliminar($idusuario) {
+        parent::ejecutarsql("DELETE FROM usuario WHERE idusuario='$idusuario'");
+    }
+
+    public function guardar($usuario) {
+        $sql = "INSERT INTO usuario(
+					usuario,
+					clave,
+					idpersona,
+					rol
+				)
+				VALUES(
+					'{$usuario['usuario']}',
+					MD5('{$usuario['clave']}'),
+					'{$usuario['idpersona']}',
+					'{$usuario['rol']}'
+				)";
+        echo"<br>La Consulta de guardar usuario es:$sql<br>";
+        parent::ejecutarsql($sql);
+    }
+
+    public function modificar($usuario) {
+        parent::ejecutarsql("UPDATE usuario SET usuario='{$usuario['usuario']}',clave='{$usuario['clave']}' WHERE idusuario={$usuario['idusuario']}");
+    }
+
+    public function listar() {
+        return parent::resultadoconsulta("SELECT * FROM usuario");
+    }
+
+    public function idmenor() {
+        $resultado = parent::ejecutarsql("SELECT MIN(idusuario) AS id from usuario");
+        $id = $resultado->fetch_array(MYSQLI_ASSOC);
+        return $id ['id'];
+    }
+
+    public function buscar($text) {
+        $busqueda = parent::ejecutarsql("SELECT * FROM usuario WHERE usuario LIKE '%$text%'");
+        return $busqueda->fetch_array(MYSQLI_ASSOC);
+    }
+
+}
+*/
